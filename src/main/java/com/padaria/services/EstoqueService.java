@@ -30,6 +30,11 @@ public class EstoqueService {
 		return repo.insert(obj);
 	}
 	
+	public void delete(String id) {
+		findById(id);
+		repo.deleteById(id);
+	}
+	
 	public Estoque fromDTO(EstoqueDTO objDto) {
 		return new Estoque(objDto.getId(), objDto.getNome(), objDto.getDescricao(), objDto.getQtd(), objDto.getPreco());
 	}
